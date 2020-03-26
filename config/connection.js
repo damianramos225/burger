@@ -1,21 +1,12 @@
-var express = require("express");
 var mysql = require("mysql");
 
-var app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
-
-
 var connection = mysql.createConnection({
-    host: "localhost",
+    host: "ehc1u4pmphj917qf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     port: 3306,
-    user: "root",
-    password: "",
-    database: "burgers_db"
+    user: "elcdsv33mame729k",
+    password: "uvkgy0f0eqpmzinq",
+    database: "sr3bd8e6cvot33kw"
 });
-
 
 connection.connect(function (err) {
     if (err) {
@@ -24,6 +15,5 @@ connection.connect(function (err) {
     }
     console.log("connected as id " + connection.threadId);
 });
-
 
 module.exports = connection
